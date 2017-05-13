@@ -1,0 +1,31 @@
+.progress-ajax {
+	margin-top: 25%;
+	left: 50%;
+	width: 40%;
+}
+
+body {
+	background-color: #f5f5f5;
+}
+
+.m-nav-bar-principal {
+	background-color: #ef5350 !important;
+}
+
+.brand-logo {
+	padding-left: 20px !important;
+}
+
+.m-acoes-rodape {
+	position: relative;
+	bottom: 6px;
+	left: 6px;
+}
+
+.tr-success {
+	background-color: #f1f8e9;
+}
+
+.tr-error {
+	background-color: #ffebee;
+}

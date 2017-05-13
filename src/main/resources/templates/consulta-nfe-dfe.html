@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt_BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.min.css}" media="screen,projection" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" media="screen,projection" />
+<title>Consulta Notas Fiscais</title>
+</head>
+<body>
+
+	<header class="navbar-fixed">
+
+		<nav class="m-nav-bar-principal">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo m-expandir">Distribuição DFe</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
+					<li class="js-manifestar"><a href="badges.html"><i class="material-icons left">class</i>Manifestar</a></li>
+					<li><a href="badges.html"><i class="material-icons left">attachment</i>Arquivar</a></li>
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<article>
+
+		<section id="consulta-notas-fiscais">
+
+			<div th:if="${#lists.isEmpty(listaNFe)}">
+				<blockquote>Nenhuma nota fiscal localizada</blockquote>
+			</div>
+
+			<div class="tb-notas-fiscais" th:unless="${#lists.isEmpty(listaNFe)}" style="margin: 0 auto; margin-top: 50px;">
+
+				<table class="highlight responsive-table bordered m-tb-nfe">
+					<thead>
+						<tr>
+							<th class="center-align"><input class="filled-in js-selecionar-todos" id="manifestar-todos" type="checkbox" /> <label for="manifestar-todos"></label></th>
+							<th>Chave Acesso</th>
+							<th>Nome Emitente</th>
+							<th>Valor</th>
+							<th>Tipo</th>
+							<th>Data Emissão</th>
+							<th>Data Recebimento</th>
+							<th>Situação</th>
+							<!-- <th></th> -->
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="nfe : ${listaNFe}" class="js-selecionar-linha">
+							<td class="center-align"><input th:if="${nfe.resumo}" class="filled-in" th:id="${nfe.chNFe}" type="checkbox" /> <label th:if="${nfe.resumo}"
+								th:for="${nfe.chNFe}"></label></td>
+							<td th:text="${nfe.chNFe}"></td>
+							<td th:text="${nfe.nomeEmitente}"></td>
+							<td th:text="|R$ ${#numbers.formatDecimal(nfe.valor, 0, 'POINT', 2, 'COMMA')}|"></td>
+							<td th:text="${nfe.tipoNf}"></td>
+							<td th:text="${{nfe.dataEmissao}}"></td>
+							<td th:text="${{nfe.dataRecebimento}}"></td>
+							<td th:text="${nfe.situacaoNFe.descricao}"></td>
+							<!-- <td><a th:unless="${nfe.resumo}" class="waves-effect waves-light btn deep-orange z-depth-0"><i class="material-icons left">send</i>Manifestar</a></td> -->
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<!-- <br th:each="i : ${#numbers.sequence(1, 100)}" /> -->
+
+		</section>
+
+		<div class="fixed-action-btn toolbar">
+
+			<a class="btn-floating btn-large red js-nfe-toolbar"> <i class="large material-icons">add_circle</i></a>
+
+			<ul>
+				<li class="waves-effect waves-light"><a class="js-config-mos" th:href="@{/#}" href="#!"><i class="material-icons">folder_special</i> <!-- <span class="m-acoes-rodape">Arquivadas</span> --></a></li>
+				<li class="waves-effect waves-light"><a class="js-cons-dfe" th:href="@{/nfe/consulta/dfe/}" href="#!"><i class="material-icons">refresh</i> <!-- <span class="m-acoes-rodape">Atualizar</span> --></a></li>
+			</ul>
+
+		</div>
+
+	</article>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/materialize.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/proto-utils.js}"></script>
+	<script type="text/javascript" th:src="@{/js/proto-nfe-dfe.js}"></script>
+</body>
+</html>

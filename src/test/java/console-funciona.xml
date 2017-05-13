@@ -1,0 +1,23 @@
+<retEnvEvento xmlns="http://www.portalfiscal.inf.br/nfe"
+	versao="1.00">
+	<idLote>1</idLote>
+	<tpAmb>2</tpAmb>
+	<verAplic>AN_1.0.0</verAplic>
+	<cOrgao>91</cOrgao>
+	<cStat>128</cStat>
+	<xMotivo>Lote de evento processado</xMotivo>
+	<retEvento versao="1.00">
+		<infEvento>
+			<tpAmb>2</tpAmb>
+			<verAplic>AN_1.0.0</verAplic>
+			<cOrgao>91</cOrgao>
+			<cStat>573</cStat>
+			<xMotivo>Rejeicao: Duplicidade de evento</xMotivo>
+			<chNFe>31170422065841000110550020000004236000005461</chNFe>
+			<tpEvento>210200</tpEvento>
+			<xEvento>Confirmacao da Operacao</xEvento>
+			<nSeqEvento>1</nSeqEvento>
+			<dhRegEvento>2017-05-12T16:51:29-03:00</dhRegEvento>
+		</infEvento>
+	</retEvento>
+</retEnvEvento>

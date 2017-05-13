@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt_BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/materialize.min.css}" media="screen,projection" />
+<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" media="screen,projection" />
+<title>Consultar e Manifestar DFe</title>
+</head>
+<body style="border-top: 5px solid rgb(244, 67, 54);">
+
+	<article style="margin: 10px;">
+
+		<!-- <ul>
+			<li><a class="js-config-mos" th:href="@{/#}">Configurar MOS</a></li>
+			<li><a class="js-cons-dfe" th:href="@{/nfe/consulta/dfe/}">Consultar DFe</a></li>
+		</ul> -->
+
+		<div class="preloader-wrapper hide progress-ajax big active">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fixed-action-btn toolbar">
+		
+			<a class="btn-floating btn-large red js-nfe-toolbar"> <i class="large material-icons">view_headline</i></a>
+			
+			<ul>
+				<li class="waves-effect waves-light"><a class="js-config-mos" th:href="@{/#}" href="#!"><i class="material-icons">settings</i></a></li>
+				<li class="waves-effect waves-light"><a class="js-cons-dfe" th:href="@{/nfe/consulta/dfe/}" href="#!"><i class="material-icons">youtube_searched_for</i></a></li>
+				<li class="waves-effect waves-light"><a href="#!"><i class="material-icons">close</i></a></li>
+			</ul>
+			
+		</div>
+
+	</article>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/materialize.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/proto-nfe.js}"></script>
+</body>
+</html>
